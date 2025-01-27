@@ -1,0 +1,11 @@
+
+#+ATTR_HTML: :id photo
+[[./static/pic.jpg]]
+
+* Andre Goderich 郭育賢
+:PROPERTIES:
+:ID: name
+:END:
+
+I am an associate professor of linguistics in the Department of English, National Changhua University of Education.
+My [[./publications.org][research]] mainly concerns the Atayal language in various aspects, including its historical development and synchronic phonology.
