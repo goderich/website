@@ -4,7 +4,10 @@
 - TBA. The impact of Japanese on the phonology of Plngawan and Klesan Atayal. Manuscript accepted for publication in Tsing Hua Journal of Chinese Studies.
 - TBA. (With Yi-Yang Cheng). The Matu'uwal Atayal case marking system revisited. Taiwan Journal of Linguistics 24(1):2.
 - TBA. Formosan loanwords in four Atayal dialects. Manuscript accepted for publication in Concentric: Studies in Linguistics.
+  {{{br}}} [[file:static/Goderich_Formosan_loanwords.pdf][Manuscript]]
 - 2024. Dialectal distinctions in Plngawan Atayal: Current state and history. Concentric: Studies in Linguistics 50(1):57--88.
+  {{{br}}}[[file:static/Goderich_2024b_Dialectal_distinctions_in_Plngawan.pdf][Manuscript]] [[https://doi.org/10.1075/consl.00034.god][DOI]]
 - 2024. Glottal stop alternations in Plngawan Atayal. Journal of Taiwanese Languages and Literature 19(1):103--131.
-  {{{br}}}[[https://doi.org/10.6710/JTLL.202404_19(1).0003][PDF]]
+  {{{br}}}[[https://doi.org/10.6710/JTLL.202404_19(1).0003][DOI]] (Open Access)
 - 2021. Taokas-10 revisited: Taokas or Atayal? Oceanic Linguistics 60(2):447--473.
+  {{{br}}} [[file:static/Goderich_2021_Taokas-10_revisited.pdf][Manuscript]] [[https://doi.org/10.1353/ol.2021.0013][DOI]]
