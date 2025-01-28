@@ -9,6 +9,15 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
+#container {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  grid-template-rows: auto 1fr auto;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
 body {
   font-size: 1.8rem;
   line-height: 1.618;
@@ -16,11 +25,6 @@ body {
   margin: auto;
   color: #4a4a4a;
   background-color: #f9f9f9;
-  padding: 13px;
-  display: grid;
-  min-height: 98vh;
-  min-height: 98svh;
-  grid-template-rows: auto 1fr auto;
 }
 
 @media (max-width: 684px) {

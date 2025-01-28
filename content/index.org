@@ -7,5 +7,6 @@
 :ID: name
 :END:
 
+@@html:<style> p { text-align: center; } </style>@@
 I am an associate professor of linguistics in the Department of English, National Changhua University of Education.
 My [[./publications.org][research]] mainly concerns the Atayal language in various aspects, including its historical development and synchronic phonology.

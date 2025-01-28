@@ -35,9 +35,10 @@
       [:link {:rel "stylesheet" :href "/css/normalize.css"}]
       [:link {:rel "stylesheet" :href "/css/sakura.css"}]]
      [:body
-      header
-      [:main (h/raw content)]
-      footer]])))
+      [:div#container
+       header
+       [:main (h/raw content)]
+       footer]]])))
 
 (doseq [file (fs/list-dir "content")]
   (when (= (fs/extension file) "org")
