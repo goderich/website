@@ -265,20 +265,30 @@ nav ul {
   list-style: none;
 }
 
-nav li, .home {
+nav a {
+    color: #184b44;
+}
+
+nav li, #home-container {
   display: inline-block;
   margin: 0;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem;
 }
 
 /* Footer */
 
-footer, footer a {
+footer {
     margin-left: auto;
     margin-right: auto;
+    font-size: 60%;
+}
+
+footer, footer a, footer a:visited {
     color: #aaaaaa;
 }
 
-footer a, footer a:visited {
-    color: #aaaaaa;
+@media (max-width: 382px) {
+  footer {
+    font-size: 1.5vw;
+  }
 }
