@@ -1,7 +1,8 @@
 (ns build
   (:require [babashka.fs :as fs]
             [babashka.process :as pro]
-            [hiccup2.core :as h]))
+            [hiccup2.core :as h]
+            [clojure.string :as str]))
 
 (def header (h/raw (slurp "templates/header.html")))
 (def footer (h/raw (slurp "templates/footer.html")))
@@ -40,6 +41,7 @@
        [:main (h/raw content)]
        footer]]])))
 
+;; Root folder contents
 (doseq [file (fs/list-dir "content")]
   (when (= (fs/extension file) "org")
     (let [out (out-file-name file)]
@@ -49,5 +51,63 @@
            (spit out))
       (println "Wrote" out))))
 
+;; Blog
+
+;; Regenerate blog from scratch each time
+(fs/delete-tree "public/blog")
+
+;; Atom to store information about each blog post (for use in the index)
+(def blog-posts (atom []))
+
+(defn- extract-org-title [file]
+  (->> (fs/file file)
+       slurp
+       (re-find #"^#\+title: (.+)\n")
+       second))
+
+(defn extract-date
+  "Extract date from a nested filepath that includes the dirs YYYY/MM/DD."
+  [file]
+  (as-> (str file) it
+    (re-find #"\d\d\d\d/\d\d/\d\d" it)
+    (str/replace it #"/" "-")))
+
+(defn- convert-blog-post [file _]
+  (when (= (fs/extension file) "org"))
+  (let [out (-> file fs/strip-ext (str ".html"))
+        title (extract-org-title file)
+        date (extract-date file)]
+    (->> file
+         html-content-str
+         html-file-str
+         (spit out))
+    (swap! blog-posts conj [date title out])
+    (fs/delete file)
+    :continue))
+
+(println "Generating blog posts...")
+(fs/copy-tree "content/blog" "public/blog" {:replace-existing true})
+(doseq [file (fs/walk-file-tree "public/blog" {:visit-file convert-blog-post})])
+
+;; Blog index
+(defn- gen-blog-post-link [[date title link]]
+  (let [link (->> link (re-find #"public/(\S+)") second)]
+    [:a {:href link} (str "[" date "] " title)]))
+
+(let [blog-index-content
+      (h/html
+       [:h1 "Blog"]
+       [:p "Index of my blog posts"]
+       (->> @blog-posts
+            (sort-by first (complement compare))
+            (map gen-blog-post-link)
+            (interpose [:br])
+            (into [:ul])))]
+  (->> blog-index-content
+       html-file-str
+       (spit "public/blog/index.html")))
+(println "Blog posts generated")
+
+;; Static artifacts
 (fs/copy-tree "content/static" "public/static" {:replace-existing true})
 (println "Copied over static artifacts")
