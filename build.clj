@@ -91,7 +91,7 @@
 
 ;; Blog index
 (defn- gen-blog-post-link [[date title link]]
-  (let [link (->> link (re-find #"public/(\S+)") second)]
+  (let [link (->> link (re-find #"public/blog/(\S+)") second)]
     [:a {:href link} (str "[" date "] " title)]))
 
 (let [blog-index-content
