@@ -6,4 +6,4 @@ Some basic content here for testing stuff
 
 ** Level two heading
 
-[[file:../30/post.org][Link to a different blog post]]
+[[file:../2025-05-04-post/index.org][Link to a different blog post]]

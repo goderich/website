@@ -65,24 +65,24 @@
        (re-find #"^#\+title: (.+)\n")
        second))
 
-(defn extract-date
-  "Extract date from a nested filepath that includes the dirs YYYY/MM/DD."
+(defn- extract-date
+  "Extract date from a filepath that includes the string YYYY-MM-DD (presumably in the dir)."
   [file]
-  (as-> (str file) it
-    (re-find #"\d\d\d\d/\d\d/\d\d" it)
-    (str/replace it #"/" "-")))
+  (->> (str file)
+       (re-find #"\d\d\d\d-\d\d-\d\d")))
 
 (defn- convert-blog-post [file _]
-  (when (= (fs/extension file) "org"))
-  (let [out (-> file fs/strip-ext (str ".html"))
-        title (extract-org-title file)
-        date (extract-date file)]
-    (->> file
-         html-content-str
-         html-file-str
-         (spit out))
-    (swap! blog-posts conj [date title out])
-    (fs/delete file)
+  (if (= (fs/extension file) "org")
+    (let [out (-> file fs/strip-ext (str ".html"))
+          title (extract-org-title file)
+          date (extract-date file)]
+      (->> file
+           html-content-str
+           html-file-str
+           (spit out))
+      (swap! blog-posts conj [date title out])
+      (fs/delete file)
+      :continue)
     :continue))
 
 (println "Generating blog posts...")
@@ -91,7 +91,7 @@
 
 ;; Blog index
 (defn- gen-blog-post-link [[date title link]]
-  (let [link (->> link (re-find #"public/blog/(\S+)") second)]
+  (let [link (->> link (re-find #"public/blog/(\S+)index.html") second)]
     [:a {:href link} (str "[" date "] " title)]))
 
 (let [blog-index-content
@@ -99,7 +99,7 @@
        [:h1 "Blog"]
        [:p "Index of my blog posts"]
        (->> @blog-posts
-            (sort-by first (complement compare))
+            (sort-by first #(compare %2 %1))
             (map gen-blog-post-link)
             (interpose [:br])
             (into [:ul])))]
