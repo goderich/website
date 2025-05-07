@@ -42,7 +42,7 @@
        footer]]])))
 
 ;; Root folder contents
-(doseq [file (fs/list-dir "content")]
+(doseq [file (fs/list-dir "public")]
   (when (= (fs/extension file) "org")
     (let [out (out-file-name file)]
       (->> file
@@ -52,9 +52,6 @@
       (println "Wrote" out))))
 
 ;; Blog
-
-;; Regenerate blog from scratch each time
-(fs/delete-tree "public/blog")
 
 ;; Atom to store information about each blog post (for use in the index)
 (def blog-posts (atom []))
@@ -71,43 +68,42 @@
   (->> (str file)
        (re-find #"\d\d\d\d-\d\d-\d\d")))
 
-(defn- convert-blog-post [file _]
-  (if (= (fs/extension file) "org")
-    (let [out (-> file fs/strip-ext (str ".html"))
-          title (extract-org-title file)
-          date (extract-date file)]
-      (->> file
-           html-content-str
-           html-file-str
-           (spit out))
-      (swap! blog-posts conj [date title out])
-      (fs/delete file)
-      :continue)
+(defn- convert-blog-post [file]
+  (let [out (-> file fs/strip-ext (str ".html"))
+        title (extract-org-title file)
+        date (extract-date file)]
+    (->> file
+         html-content-str
+         html-file-str
+         (spit out))
+    (swap! blog-posts conj [date title out])
+    (println "Wrote" out)
     :continue))
 
 (println "Generating blog posts...")
-(fs/copy-tree "content/blog" "public/blog" {:replace-existing true})
-(doseq [file (fs/walk-file-tree "public/blog" {:visit-file convert-blog-post})])
+(fs/walk-file-tree
+ "public/blog"
+ {:visit-file (fn [file _]
+                (cond
+                  (= (str file) "public/blog/index.org") :continue
+                  (= (fs/extension file) "org") (convert-blog-post file)
+                  :else :continue))})
 
 ;; Blog index
 (defn- gen-blog-post-link [[date title link]]
-  (let [link (->> link (re-find #"public/blog/(\S+)index.html") second)]
+  (let [link (->> link (re-find #"public(\S+)index.html") second)]
     [:a {:href link} (str "[" date "] " title)]))
 
-(let [blog-index-content
+(let [blog-index-text (html-content-str "public/blog/index.org")
+      blog-index-contents
       (h/html
-       [:h1 "Blog"]
-       [:p "Index of my blog posts"]
+       (h/raw blog-index-text)
        (->> @blog-posts
             (sort-by first #(compare %2 %1))
             (map gen-blog-post-link)
             (interpose [:br])
             (into [:ul])))]
-  (->> blog-index-content
+  (->> blog-index-contents
        html-file-str
        (spit "public/blog/index.html")))
-(println "Blog posts generated")
-
-;; Static artifacts
-(fs/copy-tree "content/static" "public/static" {:replace-existing true})
-(println "Copied over static artifacts")
+(println "Blog index generated")
