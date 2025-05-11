@@ -7,12 +7,6 @@
 (def header (h/raw (slurp "templates/header.html")))
 (def footer (h/raw (slurp "templates/footer.html")))
 
-(defn- out-file-name
-  "Generate an output file name from an input file name."
-  [file]
-  (let [basename (-> file fs/file-name fs/strip-ext)]
-    (str "public/" basename ".html")))
-
 (defn- html-content-str
   "Generate html content from input file using pandoc."
   [file]
@@ -44,7 +38,7 @@
 ;; Root folder contents
 (doseq [file (fs/list-dir "public")]
   (when (= (fs/extension file) "org")
-    (let [out (out-file-name file)]
+    (let [out (-> file fs/strip-ext (str ".html"))]
       (->> file
            html-content-str
            html-file-str
@@ -65,8 +59,7 @@
 (defn- extract-date
   "Extract date from a filepath that includes the string YYYY-MM-DD (presumably in the dir)."
   [file]
-  (->> (str file)
-       (re-find #"\d\d\d\d-\d\d-\d\d")))
+  (re-find #"\d\d\d\d-\d\d-\d\d" (str file)))
 
 (defn- convert-blog-post [file]
   (let [out (-> file fs/strip-ext (str ".html"))
