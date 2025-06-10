@@ -1,0 +1,47 @@
+graph {
+    // Options
+    node [shape=none fontname="Libertinus Serif" fontsize="32" fontcolor="#eeeeee"]
+    edge [color="#eeeeee"]
+    bgcolor="#191919"
+    // splines=false
+
+    // Aliases
+    a [label = "Atayal"];
+    na [label = "Northern Atayal"];
+    sa [label = "Southern Atayal"];
+    nna [label = <Nuclear<br/>Northern Atayal>];
+    nsa [label = <Nuclear<br/>Southern Atayal>];
+    swa [label = <Southwestern<br/>Atayal>];
+    sea [label = <Southeastern<br/>Atayal>];
+    ml [label = <<font color="greenyellow">Matu’uwal</font>>];
+    sk [label = <<font color="gray">Skikun</font>>];
+    sq [label = <<font color="gray">Squliq</font>>];
+    su [label = <<font color="gray">S’uli</font>>];
+    mw [label = <<font color="gray">Matu’aw</font>>];
+    kl [label = <<font color="gray">Klesan</font>>];
+    ba [label = <<font color="gray">B’ala</font>>];
+    pl [label = <<font color="greenyellow">Plngawan</font>>];
+
+    // The graph itself
+    a -- { na, sa }
+    na -- { ml, nna }
+    nna -- { sk, sq }
+    sa -- { nsa, pl }
+    nsa -- { swa, sea }
+    swa -- { su, mw }
+    sea -- { kl, ba }
+
+    // Place nodes of the same tier
+    // on the same level horizontally
+    { rank=same na sa }
+    { rank=same nna nsa }
+    { rank=same ml sk sq su mw kl ba pl }
+
+    // Horizontal ordering of nodes
+    {
+    rank = same;
+    rankdir = LR;
+    edge[style=invis];
+    ml -- sk -- sq -- su -- mw -- kl -- ba -- pl
+    }
+}

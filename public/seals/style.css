@@ -1,0 +1,67 @@
+.reveal strong, .reveal b {
+    color: red;
+    font-style: normal;
+}
+
+.reveal em {
+    color: greenyellow;
+    font-style: normal;
+}
+
+.reveal del {
+    color: lightslategray;
+    text-decoration: none;
+}
+
+.reveal .slide-number {
+    background-color: var(--r-background-color);
+}
+
+/* Do not use uppercase for slide titles */
+.reveal h2 {
+    text-transform: none;
+}
+
+/* Do not show slide number on title page: */
+/* in HTML presentations */
+.reveal .slide-number > a[href*='title-slide'],
+/* in PDFs */
+html.print-pdf #title-slide + .slide-number-pdf {
+  display: none;
+}
+
+.slide-number-a {
+    font-size: 35px;
+}
+
+html.print-pdf .reveal .slide-number-pdf {
+    font-size: 30px;
+}
+
+.small {
+    font-size: 80%;
+}
+
+/* #title-slide .title { */
+/*     font-size: var(--r-heading2-size); */
+/* } */
+
+#refs {
+    font-size: 26px;
+    /* overflow-y: scroll !important; */
+    /* scrollbar-gutter: stable !important; */
+    /* height: 500px; */
+    /* border: 3px solid; */
+    /* padding: 15px; */
+
+    /* Use italics instead of green in refs */
+    em {
+        color: var(--r-main-color);
+        font-style: italic;
+    }
+    /* Left-align entries */
+    .csl-entry {
+        text-align: left;
+    }
+}
+
