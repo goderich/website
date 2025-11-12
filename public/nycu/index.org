@@ -1,0 +1,290 @@
+#+MACRO: nl @@html:<br>@@
+# Only allow subscript forms in curly brackets
+#+OPTIONS: ^:{}
+
+* Introduction
+** General information
+- Matu'uwal is a dialect of Atayal spoken in Miaoli County.
+- It belongs to the Northern Atayal branch [cite:@goderich2020].
+
+** [[./map.png]]
+
+** Matu'uwal phonological inventory
+** Consonant inventory
+| p     | t        | k      | q     | ʔ |
+| b [β] |          | g [ɣ]  |       |   |
+|       | c [t͡s] |        |       |   |
+|       | s        | x      | h [ħ] |   |
+| m     | n        | ng [ŋ] |       |   |
+|       | l, r     |        |       |   |
+| w     | y [j]    |        |       |   |
+
+** Vowel inventory
+| <c> | <c> | <c> |
+|  i  |     |  u  |
+|     | (ə) |     |
+|     |  a  |     |
+
+** Schwa
+- The vowel [ə] is quasi-phonemic.
+  - It cannot be stressed.
+  - It appears only in the first syllable.
+
+** Stress
+is always word-final.
+
+** Matu'uwal morphology
+- As most other Formosan languages, Atayal has a rich affixation system:
+  - Suffixes: /-un/ (Patient Voice), /-an/ (Locative Voice),
+  - Prefixes: /si-/ (Circumstantial Voice), /pa-/ (future or causative),
+  - Infixes: /<um>/ (Actor Voice), /<in>/ (perfective),
+  - Reduplication: /Ca-/ (future, nominalization), /CVC-/ (plurality).
+
+** Affixation examples
+Root \text{/capuh/} 'to sweep'
+- /c\textbf{um}apuh/ 'to sweep [AV]'
+- /capuh\textbf{an}/ 'to sweep [LV]'
+- /\textbf{ca}capuh/ 'broom'
+
+** Root shapes
+- The canonical root shape in many Austronesian languages is CVCVC.
+- There can be longer and shorter roots, some of which we will see today.
+
+* Synchronic vowel alternations
+** Three main processes
+- Historical schwa alternations
+- Hiatus resolution
+- Rhythmic vowel reduction
+
+** Historical schwa alternations :animate:nohandout:
+** Historical schwa alternations :animate:
+- As the name suggests, these alternations arose due to changes of historical *ə.
+- *ə underwent different changes depending on its position in the word.
+
+** Historical schwa alternations
+- These alternations are specific to the roots in which they occur.
+- I treat these roots as having an underlying \textit{/ə/} phoneme.
+  
+** Historical schwa alternations
+- We can group schwa-alternating roots based on where the underlying \textit{/ə/} occurs:
+  - For disyllabic roots, these are /CVCəC/, /CəCVC/, and /CəCəC/.
+  
+** CVCəC roots
+| t<um>ah\textbf{u}k | tahk-un | 'to cook'           |
+| ma-bah\textbf{u}q  | bahq-an | 'to wash (clothes)' |
+| q<um>ih\textbf{u}l | qihl-un | 'to force, compel'  |
+- Compare /c<um>apuh~capuh-an/, with no alternation.
+
+** CəCVC roots
+| h<um>raq | h\textbf{a}raq-un | 'to strip off' |
+| s<um>kuʔ | s\textbf{u}kuʔ-un | 'to put'       |
+| s<um>liʔ | s\textbf{i}liʔ-un | 'to collect'   |
+
+** CəCəC roots
+| h<um>g\textbf{u}b | h\textbf{a}gb-an | 'to scry'    |
+| k<um>l\textbf{u}h | k\textbf{a}lh-un | 'to harvest' |
+| q<um>l\textbf{u}ʔ | q\textbf{a}lʔ-un | 'to close'   |
+
+** Schwa rules
+- It makes more sense to write two separate rules for schwa:
+  - *ə-deletion* and *ə-fortition*.
+
+** ə-deletion
+Delete any [ə] between two syllables.
+
+** ə-deletion
+ə → ∅ / VC_CV
+
+** ə-fortition
+Fortition [ə] into a cardinal vowel depending on its position.
+
+** ə-fortition
+- This is a simplification of a more complex series of rules.
+- We are skipping over the details in this talk.
+
+** Schwa rules
+- ə-fortition precedes ə-deletion.
+  - We will see why later in the talk.
+
+** Schwa rules
+|             | \text{/qələʔ + <um>/} | \text{/qələʔ + -un/} |
+|-------------+---------------------+--------------------|
+| ə-fortition | quməluʔ             | qaləʔun            |
+| ə-deletion  | qumluʔ              | qalʔun             |
+
+** Non-alternating vowels :noexport:
+| Pre-/infixed form | Suffixed form | Meaning            |
+|-------------------+---------------+--------------------|
+| t<um>akuʔ         | takuʔ-un      | 'to scoop up'      |
+| r<um>aŋaʔ         | raŋaʔ-un      | 'to plead'         |
+| ma-puhug          | puhug-un      | 'to break in half' |
+- Alternating roots contrast with non-alternating ones.
+
+** Hiatus resolution :animate:nohandout:
+** Hiatus resolution :animate:
+- *Hiatuses* are heterosyllabic vowel sequences with no intervening consonant.
+  - E.g. /kaal [ka.al]/ 'sky'
+- Matu'uwal allows hiatuses, but only in the final two syllables.
+
+** Hiatus resolution
+- Hiatuses are resolved when they are no longer in the rightmost foot.
+- There are two types of hiatuses in Matu'uwal: identical vowels, and \text{/a/} + high vowel.
+
+** Hiatus resolution
+Hiatuses are resolved in different ways{{{nl}}}depending on the type:
+- Identical vowels *coalesce* into one segment.
+- \textit{/a.i, a.u/} undergo *gliding* into monosyllabic \textit{/ay, aw/}.
+
+** Hiatus resolution
+| k<um>aal | kal-an | 'to speak, say'    |
+| r<um>uuʔ | ruʔ-un | 'to cling to s.o.' |
+| h<um>iiʔ | hiʔ-an | 'to pour'          |
+
+** Hiatus resolution
+| m-aiq    | bayq-an | 'to give'      |
+| c<um>aum | cawm-an | 'to rub, wipe' |
+| k<um>aiʔ | kayʔ-an | 'to dig'       |
+
+** Hiatus resolution
+- We include both gliding and coalescence into a single rule.
+- This combined rule is called *hiatus resolution*.
+
+** Rhythmic vowel reduction :animate:nohandout:
+** Rhythmic vowel reduction :animate:
+- The fourth-to-last vowel is reduced if it is in the stem [cite:@huang2017a].
+  - However, most affixation is untouched.
+- Depending on word structure, the reduced vowel becomes /[ə]/ or is deleted.
+
+** Rhythmic vowel reduction
+| k<um>\textbf{a}nuhuw  | kənuhu-un               | 'to stir up trouble' |
+| s<um>\textbf{i}ʔuwaʔ  | səʔuwaʔ-an              | 'to like, want'      |
+| ma-s\textbf{i}quwing  | səquwing-un             | 'to disagree'        |
+| si-pak\textbf{a}tiʔ   | paktiʔ-ani              | 'to throw'           |
+| m-aks\textbf{i}nguwiʔ | pak\textbf{a}snguwiʔ-un | 'to fall asleep'     |
+
+** Rhythmic vowel reduction
+- We can model rhythmic vowel reduction (*RVR*) as just weakening.
+- Any deletion is then taken care of by the ə-deletion rule.
+  - This way, RVR > ə-deletion.
+
+** Rhythmic vowel reduction
+|             | \text{/pakatiʔ + -ani/} |
+|-------------+-----------------------|
+| ə-fortition | --                    |
+| RVR         | pakətiʔani            |
+| ə-deletion  | paktiʔani             |
+
+* Interactions between alternation processes
+** Interactions
+- We can find roots where two of the above processes co-occur.
+- This allows us to see how they interact.
+
+** Schwa and RVR
+- RVR still applies to roots with an underlying schwa.
+- This happens even when the schwa is not present in the SR.
+
+** Schwa and RVR
+| m-ayhul    | pihl-an    | 'to tread'      |
+| tayhuk     | tihk-an    | 'to arrive'     |
+| q<um>aylup | qa-qilp-an | 'to sleep' (f.) |
+- c.f. /m-aybul~paybul-an/ 'to get water'
+
+** Schwa and RVR
+|             | \text{/taihək/} | \text{/taihək + -an/} |
+|-------------+---------------+---------------------|
+| ə-fortition | taihuk        | --                  |
+| RVR         | --            | təihəkan            |
+| ə-deletion  | --            | tihkan              |
+| Hiatus res. | tayhuk        | --                  |
+
+** Schwa and RVR
+- In the previous table, I cheated by using ə-deletion to remove both schwas in [təihəkan].
+- Alternatively, we could leave the first schwa to hiatus resolution.
+
+** Schwa and RVR
+| g<um>ilbak  | gəl\textbf{a}bak-an  | 'to tidy up' |
+| s<um>ilngaʔ | səl\textbf{a}ngaʔ-an | 'to hurry'   |
+
+** Schwa and RVR
+|             | \text{/giləbak + -an/} |
+|-------------+----------------------|
+| ə-fortition | gilabakan            |
+| RVR         | gəlabakan            |
+| ə-deletion  | --                   |
+| Hiatus res. | --                   |
+- ə-fortition > ə-deletion
+
+** Hiatus and RVR
+| m-ahiiq | pəhiq-un   | 'to squeeze, pinch' |
+| qilaap  | qa-qlap-an | 'to sleep' (m.)     |
+| m-ahaag | ba-bhag-un | 'to chase'          |
+
+** Hiatus and RVR
+|             | \text{/Ca- + bahaag + -un/} |
+|-------------+---------------------------|
+| ə-fortition | --                        |
+| RVR         | babəhaagun                |
+| ə-deletion  | babhaagun                 |
+| Hiatus res. | babhagun                  |
+- RVR > Hiatus resolution
+
+** Interactions
+- In most cases of interaction, the environment for RVR is not present in the SR.
+  - These are examples of *counterbleeding opacity*.
+- These alternations can be modeled with only a few phonological rules.
+
+* Problematic cases
+** Problematic cases
+- In general, the rule-based analysis works well.
+- In some cases, the current rules predict the wrong results.
+
+** RVR + <um>
+- The main problem is avoiding overapplication of RVR in infixes.
+- RVR is affected by suffixes, but does not affect infixes and reduplication.
+  - Derivational prefixes are sometimes affected.
+  
+** RVR + <um>
+|             | \text{/<um> + giləbak/} | \text{/giləbak + -an/} |
+|-------------+-----------------------+----------------------|
+| ə-fortition | --                    | gilabakan            |
+| RVR         | g\textbf{ə}miləbak    | gəlabakan            |
+| ə-deletion  | **gəmilbak            |                      |
+| Expected:   | gumilbak              |                      |
+
+** RVR + <in>
+- In some instances of <in>-infixation, RVR and ə-deletion do not apply.
+- These are due to surface-form restrictions.
+
+** RVR + <in>
+Normal behaviour:
+| cəʔarx-an  | c<in>ʔarx-an | 'to stand'            |
+| pətiqsuʔ   | m<in>tiqsuʔ  | 'to pray for harvest' |
+| m-ərakiyas | m<in>rakiyas | 'to grow (intr.)'     |
+
+** RVR + <in>
+Exceptions:
+| m-ənaquuʔ  | ʔ<in>\textbf{a}naquuʔ  | 'to repair'  |
+| m-ənaqruʔ  | ʔ<in>\textbf{a}naqruʔ  | 'to finish'  |
+| m-ənaʔaluʔ | ʔ<in>\textbf{a}naʔaluʔ | 'to replace' |
+
+** RVR + <in>
+- All of the above exceptions avoid a geminate [nn] in the output.
+- This is an example of a *conspiracy*, a problem in rule-based phonology.
+
+** RVR + <in>
+|             | \text{/ʔənaqərəʔ + <in>/} |
+|-------------+-------------------------|
+| ə-fortition | ʔinənaqəruʔ             |
+| RVR         | --                      |
+| ə-deletion  | ʔinnaqruʔ               |
+| Hiatus res. | **ʔinnaqruʔ             |
+| Expected:   | ʔin\textbf{a}naqruʔ     |
+
+* Conclusion
+** Conclusion
+- Matu'uwal data exhibits both opacity and conspiracy.
+- It serves as a good demonstration of the strengths and weaknesses of various phonological theories.
+
+* Thank you
+** References
+\footnotesize
