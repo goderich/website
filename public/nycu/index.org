@@ -269,7 +269,7 @@ Exceptions:
 
 ** RVR + <in>
 - All of the above exceptions avoid a geminate [nn] in the output.
-- This is an example of a *conspiracy*, a problem in rule-based phonology.
+- This surface-oriented restriction is a problem in rule-based phonology.
 
 ** RVR + <in>
 |             | \text{/ʔənaqərəʔ + <in>/} |
