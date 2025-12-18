@@ -1,8 +1,9 @@
 #+macro: br @@html:<br>@@
 
 ** Journal Articles
-- TBA. The impact of Japanese on the phonology of Plngawan and Klesan Atayal. Manuscript accepted for publication in /Tsing Hua Journal of Chinese Studies/.
-- TBA. (With Yi-Yang Cheng). The Matu'uwal Atayal case marking system revisited. /Taiwan Journal of Linguistics/ 24(1):2.
+- 2026. (With Yi-Yang Cheng). The Matu'uwal Atayal case marking system revisited. /Taiwan Journal of Linguistics/ 24(1):2.
+- 2025. The impact of Japanese on the phonology of Plngawan and Klesan Atayal. /Tsing Hua Journal of Chinese Studies/ 55(4):653--681.
+{{{br}}}[[https://thjcs.site.nthu.edu.tw/var/file/452/1452/img/5340/258888319.pdf][PDF]]
 - 2025. Formosan loanwords in four Atayal dialects. /Concentric: Studies in Linguistics/ 51(1):32--69.
   {{{br}}}[[file:static/Goderich_Formosan_loanwords.pdf][Manuscript]] • [[https://doi.org/10.1075/consl.23032.god][DOI]]
 - 2024. Dialectal distinctions in Plngawan Atayal: Current state and history. /Concentric: Studies in Linguistics/ 50(1):57--88.
