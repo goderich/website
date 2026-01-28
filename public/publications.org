@@ -2,7 +2,7 @@
 
 ** Journal Articles
 - 2026. (With Yi-Yang Cheng). The Matu'uwal Atayal case marking system revisited. /Taiwan Journal of Linguistics/ 24(1):2.
-  {{{br}}}[[https://toaj.stpi.niar.org.tw/index/journal/volume/article/4b1141f99b6aab4a019b8419d94e07c3][PDF]]
+  {{{br}}}[[https://doi.org/10.6519/TJL.202601_24(1).0002][DOI]] (Open Access)
 - 2025. The impact of Japanese on the phonology of Plngawan and Klesan Atayal. /Tsing Hua Journal of Chinese Studies/ 55(4):653--681.
   {{{br}}}[[https://thjcs.site.nthu.edu.tw/var/file/452/1452/img/5340/258888319.pdf][PDF]]
 - 2025. Formosan loanwords in four Atayal dialects. /Concentric: Studies in Linguistics/ 51(1):32--69.
